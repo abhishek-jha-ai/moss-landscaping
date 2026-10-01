@@ -52,7 +52,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div id="estimate" data-reveal className="scroll-mt-24 overflow-hidden rounded-3xl bg-ivory-50 text-navy-950 shadow-[0_50px_100px_-40px_rgba(0,0,0,0.8)]">
+        <div id="estimate" data-reveal className="overflow-hidden rounded-3xl bg-ivory-50 text-navy-950 shadow-[0_50px_100px_-40px_rgba(0,0,0,0.8)]">
           <EstimateWizard />
         </div>
       </div>

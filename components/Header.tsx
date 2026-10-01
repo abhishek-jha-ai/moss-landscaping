@@ -52,6 +52,7 @@ export function Header() {
   const solid = scrolled || open;
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-500 ${
         solid ? "bg-navy-950/92 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md" : "bg-gradient-to-b from-navy-950/70 to-transparent"
@@ -105,42 +106,44 @@ export function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden fixed inset-x-0 top-[4.25rem] bottom-0 overflow-y-auto bg-navy-950 pb-28"
-          >
-            <nav aria-label="Mobile" className="container-x pt-6">
-              <ul className="divide-y divide-white/10 border-y border-white/10">
-                {siteConfig.nav.map((item, i) => (
-                  <motion.li key={item.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i + 0.05 }}>
-                    <Link href={item.href} onClick={() => setOpen(false)} className="flex items-center justify-between py-4 font-serif text-2xl text-white">
-                      {item.label}
-                      <ArrowRight className="text-ember-500" />
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-              <Link href={siteConfig.estimateHref} onClick={() => setOpen(false)} className="btn btn-primary mt-8 w-full">
-                Get a Free Estimate <ArrowRight width={18} height={18} />
-              </Link>
-              <div className="mt-8 grid gap-3 text-white/80">
-                <PhoneLink location="mobile_menu" className="flex items-center gap-3 text-lg">
-                  <Phone className="text-ember-500" /> {contactInfo.phone}
-                </PhoneLink>
-                <EmailLink location="mobile_menu" className="flex items-center gap-3 text-lg">
-                  <Mail className="text-ember-500" /> {contactInfo.email}
-                </EmailLink>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
+
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          id="mobile-menu"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className={`lg:hidden fixed inset-x-0 bottom-0 z-50 overflow-y-auto bg-navy-950 pb-28 ${scrolled ? "top-[4.25rem]" : "top-[4.75rem] md:top-[5.5rem]"}`}
+        >
+          <nav aria-label="Mobile" className="container-x pt-6">
+            <ul className="divide-y divide-white/10 border-y border-white/10">
+              {siteConfig.nav.map((item, i) => (
+                <motion.li key={item.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i + 0.05 }}>
+                  <Link href={item.href} onClick={() => setOpen(false)} className="flex items-center justify-between py-4 font-serif text-2xl text-white">
+                    {item.label}
+                    <ArrowRight className="text-ember-500" />
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+            <Link href={siteConfig.estimateHref} onClick={() => setOpen(false)} className="btn btn-primary mt-8 w-full">
+              Get a Free Estimate <ArrowRight width={18} height={18} />
+            </Link>
+            <div className="mt-8 grid gap-3 text-white/80">
+              <PhoneLink location="mobile_menu" className="flex items-center gap-3 text-lg">
+                <Phone className="text-ember-500" /> {contactInfo.phone}
+              </PhoneLink>
+              <EmailLink location="mobile_menu" className="flex items-center gap-3 text-lg">
+                <Mail className="text-ember-500" /> {contactInfo.email}
+              </EmailLink>
+            </div>
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
