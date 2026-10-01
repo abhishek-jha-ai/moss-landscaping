@@ -103,7 +103,7 @@ export function ServiceAreas() {
                   inputMode="search"
                   autoComplete="off"
                   enterKeyHint="search"
-                  placeholder="e.g. Bernardsville or 07924"
+                  placeholder="e.g. Summit or 07901"
                   value={query}
                   role="combobox"
                   aria-expanded={showList}
@@ -213,9 +213,9 @@ export function ServiceAreas() {
         </div>
 
         {/* town directory */}
-        <div data-reveal className="grid content-start gap-3 sm:grid-cols-2 lg:pt-4">
+        <div data-reveal className="gap-3 sm:columns-2 lg:pt-4">
           {groups.map((g) => (
-            <div key={g.id} className="rounded-2xl border border-white/10 bg-forest-900/70 p-4 backdrop-blur-sm">
+            <div key={g.id} className="mb-3 break-inside-avoid rounded-2xl border border-white/10 bg-forest-900/70 p-4 backdrop-blur-sm">
               <p className="mb-3 flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ember-400">
                 {g.label}
                 <span className="text-white/40">{g.areas.length}</span>

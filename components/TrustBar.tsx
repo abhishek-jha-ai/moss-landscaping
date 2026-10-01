@@ -10,7 +10,7 @@ const points = [
 /** Compact trust row anchored to the bottom of the hero. */
 export function TrustBar() {
   return (
-    <div className="hero-rise border-t border-white/12 bg-navy-950/55 backdrop-blur-md" style={{ ["--d" as string]: "700ms" }}>
+    <div className="hero-rise border-y border-white/12 bg-navy-950/55 backdrop-blur-md md:border-b-0" style={{ ["--d" as string]: "700ms" }}>
       <ul className="container-x grid grid-cols-2 gap-x-4 gap-y-3 py-4 text-white sm:flex sm:items-center sm:justify-between sm:gap-6 md:py-5">
         <li className="col-span-2 flex items-baseline gap-2 sm:col-span-1">
           <span className="font-serif text-3xl font-bold text-ember-400 md:text-4xl">{siteConfig.yearsInBusiness}+</span>

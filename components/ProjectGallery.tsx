@@ -105,7 +105,7 @@ export function ProjectGallery() {
                     </span>
                     <span className="absolute inset-x-0 bottom-0 p-3.5 md:p-5">
                       <span className="mb-1.5 block text-[0.65rem] font-bold uppercase tracking-[0.18em] text-ember-400 md:text-[0.7rem]">
-                        {p.categories.map((c) => categoryLabels[c]).slice(0, 2).join(" · ")}
+                        {p.categories.map((c) => categoryLabels[c]).slice(0, sizes[i] === "regular" ? 1 : 2).join(" · ")}
                       </span>
                       <span className={`block font-serif font-bold leading-tight text-white ${sizes[i] === "large" ? "text-2xl md:text-3xl" : "text-base md:text-xl"}`}>{p.title}</span>
                     </span>

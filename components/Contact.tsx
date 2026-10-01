@@ -28,7 +28,7 @@ export function Contact() {
                   <Phone />
                 </span>
                 <span className="flex-1">
-                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-white/55">Call or text</span>
+                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-white/55">Call</span>
                   <span className="mt-0.5 block font-serif text-2xl font-bold">{contactInfo.phone}</span>
                 </span>
                 <ArrowRight className="text-white/40 transition-transform group-hover:translate-x-1 group-hover:text-ember-400" />

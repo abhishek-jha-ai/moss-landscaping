@@ -6,7 +6,7 @@ import { TrustBar } from "./TrustBar";
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-heading" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-navy-950">
+    <section id="top" aria-labelledby="hero-heading" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-navy-950 max-md:pb-[4.6rem]">
       <div className="hero-zoom absolute inset-0 -z-10">
         <Image
           src="/images/poolside-terrace-dusk.jpg"
@@ -23,14 +23,14 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/30 md:bg-gradient-to-r md:from-navy-950/90 md:via-navy-950/45 md:to-transparent" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-navy-950/80 to-transparent" />
 
-      <div className="container-x flex flex-1 flex-col justify-end pb-10 pt-32 md:justify-center md:pb-16 md:pt-36">
+      <div className="container-x flex flex-1 flex-col justify-end pb-8 pt-28 md:justify-center md:pb-16 md:pt-36">
         <div className="max-w-[40rem]">
-          <p className="hero-rise eyebrow mb-5 flex items-center gap-3 text-ember-400" style={{ ["--d" as string]: "80ms" }}>
-            <span className="h-px w-8 bg-ember-400" />
+          <p className="hero-rise eyebrow mb-5 flex items-center gap-3 !text-[0.66rem] !tracking-[0.18em] text-ember-400 sm:!text-xs sm:!tracking-[0.22em]" style={{ ["--d" as string]: "80ms" }}>
+            <span className="hidden h-px w-8 bg-ember-400 sm:block" />
             Landscape Design · Hardscapes · Outdoor Living
           </p>
           <h1 id="hero-heading" className="font-serif text-white">
-            <span className="hero-rise block text-[2.65rem] font-bold uppercase leading-[1] tracking-[0.04em] sm:text-6xl lg:text-[4.6rem]" style={{ ["--d" as string]: "160ms" }}>
+            <span className="hero-rise block text-[clamp(1.9rem,8.4vw,2.65rem)] font-bold uppercase leading-[1] tracking-[0.03em] sm:text-6xl sm:tracking-[0.04em] lg:text-[4.6rem]" style={{ ["--d" as string]: "160ms" }}>
               Extraordinary
             </span>
             <span className="hero-rise block text-[2.65rem] italic font-semibold leading-[1.08] text-ember-400 sm:text-6xl lg:text-[4.6rem]" style={{ ["--d" as string]: "260ms" }}>

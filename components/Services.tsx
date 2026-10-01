@@ -59,7 +59,7 @@ export function Services() {
                       emit("moss:gallery-filter", s.galleryCategory);
                       scrollToId("gallery");
                     }}
-                    className="px-4 py-4 text-left text-white/85 transition-colors hover:bg-white/5 hover:text-white"
+                    className="whitespace-nowrap px-4 py-4 text-left text-white/85 transition-colors hover:bg-white/5 hover:text-white"
                   >
                     See projects
                   </button>
@@ -69,7 +69,7 @@ export function Services() {
                       trackEvent("service_selected", { service: s.id, action: "request_estimate" });
                       requestEstimate({ projectType: s.estimateType });
                     }}
-                    className="flex items-center justify-end gap-2 border-l border-white/10 px-4 py-4 text-ember-400 transition-colors hover:bg-ember-500 hover:text-navy-950"
+                    className="flex items-center justify-end gap-2 whitespace-nowrap border-l border-white/10 px-4 py-4 text-ember-400 transition-colors hover:bg-ember-500 hover:text-navy-950"
                     aria-label={`Get an estimate for ${s.title}`}
                   >
                     Get estimate <ArrowRight width={16} height={16} />

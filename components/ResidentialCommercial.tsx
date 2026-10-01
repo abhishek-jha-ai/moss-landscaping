@@ -37,7 +37,7 @@ export function ResidentialCommercial() {
                 <Icon width={22} height={22} />
               </span>
               <h3 className="mt-10 font-serif text-4xl font-bold">{data.title}</h3>
-              <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2.5">
+              <ul className="mt-5 grid gap-x-4 gap-y-2.5 min-[420px]:grid-cols-2">
                 {data.items.map((item) => (
                   <li key={item} className="flex items-center gap-2 text-[0.95rem] font-semibold text-white/90">
                     <Check width={16} height={16} className="shrink-0 text-ember-400" /> {item}
